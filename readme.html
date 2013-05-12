@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE>Readme</TITLE>
+	<META NAME="GENERATOR" CONTENT="StarOffice 8  (Linux)">
+	<META NAME="CREATED" CONTENT="20050313;17562500">
+	<META NAME="CHANGED" CONTENT="20051209;16551600">
+	<STYLE>
+	<!--
+		@page { size: 8.5in 11in }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" BGCOLOR="#ffffff" DIR="LTR">
+<P><BR><BR>
+</P>
+<P><BR><BR>
+</P>
+<H3><B>Installation of Compiere MFG + SCM Dbf Eclipse plugin</B></H3>
+<UL>
+	<LI><P STYLE="margin-bottom: 0in">This plugin does not contain
+	Databases. This release does not start database.<BR>(Install
+	Database and start before using it) 
+	</P>
+	<P STYLE="margin-bottom: 0in">You can use one and only one database
+	by workspace. You can use a different database for each workspace.</P>
+	<P STYLE="margin-bottom: 0in">If you have a project with several
+	Plants or Warehouses and some of them using different databases, you
+	must group them in several workspace.</P>
+	<P STYLE="margin-bottom: 0in">This plugin will help you to make the
+	configuration of your Compiere MFG + SCM persistence layer which is
+	based on OJB (From Apache group). You don't need to have OJB
+	installed to run the plugin.</P>
+	<P STYLE="margin-bottom: 0in">This release allow you to create and
+	or modify databases and tables using torque model. This release help
+	you to start from an existing database and make reverse engineering
+	on it. Compiere MFG + SCM actually provide scripts for it's database
+	creation.</P>
+	<LI><P STYLE="margin-bottom: 0in">Download .zip
+	org.compiere.mfg_scm.eclipse.db_xxx.zip</P>
+	<LI><P STYLE="margin-bottom: 0in">Unzip it in &lt;eclipse_home&gt;/plugins
+		</P>
+	<LI><P STYLE="margin-bottom: 0in">Plugin activation for Eclipse 3.0
+	normally automatically done. Manual action is : select menu
+	'Window&gt;Customize Perspective&gt;Commands', and check 'Dbf' in
+	'Available command groups'.</P>
+	<LI><P STYLE="margin-bottom: 0in">Set Dbf home : Window -&gt;
+	Preferences, select Dbf and set Dbf home to
+	&lt;eclipse_home&gt;/&lt;My_Workspace&gt;/&lt;Mf_DbfProjectName&gt;</P>
+	<P STYLE="margin-bottom: 0in">Other preferences default values
+	should be good.</P>
+	<LI><P STYLE="margin-bottom: 0in">Create a Dbf project for each
+	workspace in which you want to use the Dbf Plugin.</P>
+	<P STYLE="margin-bottom: 0in">File-&gt;New-&gt;Project-&gt;Java-&gt;Dbf
+	then Next</P>
+	<P STYLE="margin-bottom: 0in">Give a name for your project then
+	Finish.</P>
+	<P STYLE="margin-bottom: 0in">It will crate you a project which will
+	appear in the Package Explorer (Left of Java Perspective)</P>
+	<LI><P STYLE="margin-bottom: 0in">Select it (click on it in Package
+	Explorer) then right click</P>
+	<P STYLE="margin-bottom: 0in">You get a menu select in it 
+	</P>
+	<P STYLE="margin-bottom: 0in">Properties-&gt;Dbf</P>
+	<P STYLE="margin-bottom: 0in">General page</P>
+	<P STYLE="margin-bottom: 0in">Main information to put here is the
+	dtd url for torque you will want to use</P>
+</UL>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<UL>
+	<P STYLE="margin-bottom: 0in"><IMG SRC="img/generalProperty.jpg" NAME="graphics1" ALIGN=LEFT WIDTH=740 HEIGHT=738 BORDER=0><BR CLEAR=LEFT></P>
+	<LI><P STYLE="margin-bottom: 0in"></P>
+	<P STYLE="margin-bottom: 0in">Database property page, you must fill
+	it, selecting your database in the defaults for platform it will
+	fill all fields with default value. Below a screen shot for postgres</P>
+</UL>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<UL>
+	<P STYLE="margin-bottom: 0in"><IMG SRC="img/databaseProperty.jpg" NAME="graphics2" ALIGN=LEFT WIDTH=740 HEIGHT=738 BORDER=0><BR CLEAR=LEFT></P>
+</UL>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0in"></P>
+	<LI><P STYLE="margin-bottom: 0in"></P>
+	<P STYLE="margin-bottom: 0in">Then the DbInterface Page you normally
+	have to complete only the package field cf screen shot.</P>
+</UL>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><IMG SRC="img/dbinterfaceProperty.jpg" NAME="graphics3" ALIGN=LEFT WIDTH=740 HEIGHT=738 BORDER=0><BR CLEAR=LEFT><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0in"></P>
+	<P STYLE="margin-bottom: 0in">Then normally nothing for the mapping.
+	Default values should be good.</P>
+</UL>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><IMG SRC="img/mappingProperty.jpg" NAME="graphics4" ALIGN=LEFT WIDTH=740 HEIGHT=738 BORDER=0><BR CLEAR=LEFT><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0in">Model property page enable to
+	enter repository pat where will be stored your torque model.</P>
+</UL>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><IMG SRC="img/modelProperty.jpg" NAME="graphics5" ALIGN=LEFT WIDTH=740 HEIGHT=738 BORDER=0><BR CLEAR=LEFT><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0in"></P>
+	<P STYLE="margin-bottom: 0in">Then add the path for your JDBC
+	driver. You can find drivers for some database in the lib directory
+	of the plugin. cf the screen shot.</P>
+</UL>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><IMG SRC="img/driverProperty.jpg" NAME="graphics6" ALIGN=LEFT WIDTH=740 HEIGHT=738 BORDER=0><BR CLEAR=LEFT><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0in">When all properties have been
+	filled then you can get preview of elements which will be used to
+	create repository.xml files used by OJB.</P>
+</UL>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><IMG SRC="img/previewProperty.jpg" NAME="graphics7" ALIGN=LEFT WIDTH=740 HEIGHT=738 BORDER=0><BR CLEAR=LEFT><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0in">This plugin launches your Dbf
+	using the default JRE checked in Eclipe preferences window.<BR>To
+	set a JDK as default JRE for Eclipse open the preference window :
+	Window -&gt; Preferences -&gt; Java -&gt; Installed JREs.<BR>This
+	JRE <B>must</B> be a JDK.<BR>We recommend that you use JDK 1.4 and
+	more as they supports hot code replacement feature. 
+	</P>
+	<LI><P>The plugin sets itself Dbf classpath and bootclasspath. Use
+	Preferences -&gt; Dbf -&gt;JVM Settings, only if you need specific
+	settings. 
+	</P>
+	<LI><P>To access to your database you must open the Dbf Tree View :</P>
+	<P>Window-&gt;Show View-&gt;Other-&gt;Dbf-&gt;Dbf Db Tree</P>
+	<P>The first time, it can be long, because it open the database and
+	proceed at the reverse engineering of all tables.</P>
+	<P>Attention : this release does nor manage database re-connection
+	(some bug..). If you access to your database with wrong properties
+	or before having started your database you will need to restart
+	eclipse to have a successful connection....</P>
+</UL>
+<P><IMG SRC="img/dbTreeView.jpg" NAME="graphics8" ALIGN=LEFT WIDTH=979 HEIGHT=706 BORDER=0><BR CLEAR=LEFT><BR><BR>
+</P>
+<UL>
+	<P>You can use F2 key to rename tables or fields</P>
+	<P>you have access to some button on the right top of the view :</P>
+	<P>One for reload, one for generate java data object files, one for
+	java Display files (alpha stage) one to generate OJB xml  files, one
+	to generate torque model. (you can use it to create or update
+	structure of your database)</P>
+	<P>Then some to navigate</P>
+	<P>If you double click on a table you open the Db Table view with
+	the content of the corresponding table.</P>
+</UL>
+<P><IMG SRC="img/dbTabledata.jpg" NAME="graphics9" ALIGN=LEFT WIDTH=979 HEIGHT=706 BORDER=0><BR CLEAR=LEFT><BR><BR>
+</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0in">If you press F1 you switch to the
+	table structure view</P>
+	<P STYLE="margin-bottom: 0in">From this view you can changes
+	properties of fields</P>
+	<P STYLE="margin-bottom: 0in"></P>
+</UL>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><IMG SRC="img/dbTableStruct.jpg" NAME="graphics10" ALIGN=LEFT WIDTH=979 HEIGHT=706 BORDER=0><BR CLEAR=LEFT><BR>
+</P>
+<UL>
+	<LI><P>All changes will be lost when you quit. The only way to save
+	it is to generate Torque model and then to update database</P>
+	<P>To update database you can go to Window-&gt;Preference-&gt;Dbf</P>
+</UL>
+<P><IMG SRC="img/dbfPreferences.jpg" NAME="graphics12" ALIGN=LEFT WIDTH=712 HEIGHT=738 BORDER=0><BR CLEAR=LEFT><BR><BR>
+</P>
+<UL>
+	<LI><P>You mus now select Advanced option</P>
+	<P>And use the “create Tables from torque XML” button.</P>
+	<P>Other buttons can also help you to act on your database. Script
+	file must be a SQL script file. This need to know what you do :</P>
+	<P>You should save you database before using all this functions.</P>
+</UL>
+<P><IMG SRC="img/advancedPreferences.jpg" NAME="graphics11" ALIGN=LEFT WIDTH=712 HEIGHT=600 BORDER=0><BR CLEAR=LEFT><BR><BR>
+</P>
+<UL>
+	<LI><P></P>
+</UL>
+<P><BR><BR>
+</P>
+</BODY>
+</HTML>

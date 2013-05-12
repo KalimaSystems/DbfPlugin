@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin
+   id="org.compiere.mfg_scm.eclipse.db"
+   name="Dbf Plug-inorg.compiere.mfg_scm.eclipse.db"
+   version="0.0.2"
+   provider-name="Compiere MFG + SCM"
+   class="org.compiere.mfg_scm.eclipse.db.DbfLauncherPlugin">
+
+   <runtime>
+      <library name=".">
+         <export name="*"/>
+	</library>
+      <library name="lib/hsqldb.jar">
+         <export name="*"/>
+      </library>
+      <library name="lib/msbase.jar">
+         <export name="*"/>
+      </library>
+      <library name="lib/mssqlserver.jar">
+         <export name="*"/>
+      </library>
+      <library name="lib/msutil.jar">
+         <export name="*"/>
+      </library>
+      <library name="lib/postgresql.jar">
+         <export name="*"/>
+      </library>
+   </runtime>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.debug.core"/>
+      <import plugin="org.eclipse.swt"/>
+      <import plugin="org.eclipse.jdt.core"/>
+      <import plugin="org.eclipse.jdt.launching"/>
+      <import plugin="org.eclipse.jdt.debug"/>
+      <import plugin="org.eclipse.jdt.ui"/>
+      <import plugin="org.eclipse.debug.ui"/>
+      <import plugin="org.eclipse.jdt.debug.ui"/>
+      <import plugin="org.eclipse.core.runtime.compatibility" optional="true"/>
+      <import plugin="org.eclipse.ui.ide" optional="true"/>
+      <import plugin="org.eclipse.ui.views" optional="true"/>
+      <import plugin="org.eclipse.ui.workbench.texteditor"/>
+      <import plugin="org.eclipse.ui.forms"/>
+   </requires>
+
+
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            label="Dbf"
+            visible="true"
+            id="org.compiere.mfg_scm.eclipse.db_actionSet">
+         <menu
+               label="%menu.label"
+               id="org.compiere.mfg_scm.eclipse.db.menu">
+            <separator
+                  name="group">
+            </separator>
+         </menu>
+         <action
+               label="%menu.reconnect.label"
+               icon="icons/ojb_restart.gif"
+               tooltip="%menu.reconnect.label"
+               class="org.compiere.mfg_scm.eclipse.db.actions.ReconnectActionDelegate"
+               menubarPath="org.compiere.mfg_scm.eclipse.db.menu/group"
+               toolbarPath="Normal/additions"
+               id="org.compiere.mfg_scm.eclipse.db.reconnect">
+         </action>
+         <action
+               label="%menu.disconnect.label"
+               icon="icons/ojb_stop.gif"
+               tooltip="%menu.disconnect.label"
+               class="org.compiere.mfg_scm.eclipse.db.actions.DisconnectActionDelegate"
+               menubarPath="org.compiere.mfg_scm.eclipse.db.menu/group"
+               toolbarPath="Normal/additions"
+               id="org.compiere.mfg_scm.eclipse.db.disconnect">
+         </action>
+         <action
+               label="%menu.connect.label"
+               icon="icons/ojb_start.gif"
+               tooltip="%menu.connect.label"
+               class="org.compiere.mfg_scm.eclipse.db.actions.ConnectActionDelegate"
+               menubarPath="org.compiere.mfg_scm.eclipse.db.menu/group"
+               toolbarPath="Normal/additions"
+               id="org.compiere.mfg_scm.eclipse.db.connect">
+         </action>
+      </actionSet>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            name="Dbf"
+            class="org.compiere.mfg_scm.eclipse.db.DbfPreferencePage"
+            id="org.compiere.mfg_scm.eclipse.db.Page1">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            name="%pref.menu.jvmSettings.label"
+            category="org.compiere.mfg_scm.eclipse.db.Page1"
+            class="org.compiere.mfg_scm.eclipse.db.DbfJVMPreferencePage"
+            id="org.compiere.mfg_scm.eclipse.db.Page2">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            name="%pref.menu.sourcepath.label"
+            category="org.compiere.mfg_scm.eclipse.db.Page1"
+            class="org.compiere.mfg_scm.eclipse.db.DbfSourcePathPreferencePage"
+            id="org.compiere.mfg_scm.eclipse.db.Page3">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            name="%pref.menu.advanced.label"
+            category="org.compiere.mfg_scm.eclipse.db.Page1"
+            class="org.compiere.mfg_scm.eclipse.db.AdvancedPreferencePage"
+            id="org.compiere.mfg_scm.eclipse.db.Page5">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            name="%wizard.newDbfProject.label"
+            icon="icons/newdb_wiz.gif"
+            category="org.eclipse.jdt.ui.java"
+            class="org.compiere.mfg_scm.eclipse.db.DbfProjectCreationWizard"
+            project="true"
+            finalPerspective="org.eclipse.jdt.ui.JavaPerspective"
+            id="org.compiere.mfg_scm.eclipse.db.DbfProjectCreationWizard">
+         <description>
+            %wizard.newJavaProject.description
+         </description>
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.ui.propertyPages">
+      <page
+            objectClass="org.eclipse.core.resources.IProject"
+            adaptable="true"
+            name="Dbf"
+            class="org.compiere.mfg_scm.eclipse.db.DbfProjectPropertyPage"
+            id="org.compiere.mfg_scm.eclipse.db.DbfProjectPropertyPage">
+         <filter
+               name="nature"
+               value="org.eclipse.jdt.core.javanature">
+         </filter>
+      </page>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="MFGSCM Dbf Plugin"
+            id="mfgscmCore">
+      </category>
+      <view
+            name="Dbf DB Tree"
+            icon="icons/tree.gif"
+            category="mfgscmCore"
+            class="org.compiere.mfg_scm.eclipse.db.view.TreeView"
+            id="org.compiere.mfg_scm.eclipse.db.view.TreeView">
+      </view>
+   </extension>
+
+      <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               relative="org.eclipse.jdt.ui.PackageExplorer"
+               visible="false"
+               relationship="stack"
+               id="org.compiere.mfg_scm.eclipse.db.view.TreeView">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="Dbf Table View"
+            icon="icons/folder.gif"
+            category="mfgscmCore"
+            class="org.compiere.mfg_scm.eclipse.db.view.TableView"
+            id="org.compiere.mfg_scm.eclipse.db.view.TableView">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.ui.resourcePerspective">
+         <view
+               ratio="0.5"
+               relative="org.eclipse.ui.views.TaskList"
+               relationship="right"
+               id="org.compiere.mfg_scm.eclipse.db.view.TableView">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="Dbf Table Struct View"
+            icon="icons/folder.gif"
+            category="mfgscmCore"
+            class="org.compiere.mfg_scm.eclipse.db.view.TableStructView"
+            id="org.compiere.mfg_scm.eclipse.db.view.TableStructView">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.ui.resourcePerspective">
+         <view
+               ratio="0.5"
+               relative="org.eclipse.ui.views.TaskList"
+               relationship="right"
+               id="org.compiere.mfg_scm.eclipse.db.view.TableStructView">
+         </view>
+      </perspectiveExtension>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.elementFactories">
+      <factory
+            class="org.compiere.mfg_scm.eclipse.db.editors.MFGSCMPropertyEditorFactory"
+            id="org.compiere.mfg_scm.eclipse.db.editors.MFGSCMPropertyEditorFactory">
+      </factory>
+   </extension>
+   <extension
+         id="editors"
+         point="org.eclipse.ui.editors">
+      <editor
+            name="Property Editor"
+            extensions="CompiereMFGSCMDbInterface.properties"
+            default="true"
+            icon="icons/folder.gif"
+            contributorClass="org.compiere.mfg_scm.eclipse.db.editors.MultiPageEditorContributor"
+            class="org.compiere.mfg_scm.eclipse.db.editors.MultiPageEditor"
+            id="org.compiere.mfg_scm.eclipse.db.editors.MultiPageEditor">
+      </editor>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IProject"
+            adaptable="true"
+            id="org.compiere.mfg_scm.eclipse.db.action.popup.javaProject">
+         <filter
+               name="projectNature"
+               value="org.compiere.mfg_scm.eclipse.db.dbfnature">
+         </filter>
+         <menu
+               label="%menu.nature.label"
+               path="additions"
+               id="org.compiere.mfg_scm.eclipse.db.action.popup.javaProject.menu">
+            <separator
+                  name="group">
+            </separator>
+         </menu>
+      </objectContribution>
+   </extension>
+<!-- =========================================================================== -->
+<!-- Dbf Nature                                                                 -->
+<!-- =========================================================================== -->
+   <extension
+         id="dbfnature"
+         name="Dbf Nature"
+         point="org.eclipse.core.resources.natures">
+      <runtime>
+         <run
+               class="org.compiere.mfg_scm.eclipse.db.DbfProject">
+         </run>
+      </runtime>
+   </extension>
+</plugin>

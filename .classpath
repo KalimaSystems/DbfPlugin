@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/hsqldb.jar"/>
+	<classpathentry kind="lib" path="lib/msbase.jar"/>
+	<classpathentry kind="lib" path="lib/mssqlserver.jar"/>
+	<classpathentry kind="lib" path="lib/msutil.jar"/>
+	<classpathentry kind="lib" path="lib/postgresql.jar"/>
+	<classpathentry kind="lib" path="/home/rcs/Master/extern/java/eclipse/workspaceDevWorks/org.compiere.mfg_scm.eclipse.db/lib/DdlUtils-1.0-dev.jar"/>
+	<classpathentry kind="lib" path="/home/rcs/Master/extern/java/eclipse/workspaceDevWorks/org.compiere.mfg_scm.eclipse.db/lib/commons-betwixt-0.7.jar"/>
+	<classpathentry kind="lib" path="/home/rcs/Master/extern/java/eclipse/workspaceDevWorks/org.compiere.mfg_scm.eclipse.db/lib/commons-beanutils-1.6.1.jar"/>
+	<classpathentry kind="lib" path="/home/rcs/Master/extern/java/eclipse/workspaceDevWorks/org.compiere.mfg_scm.eclipse.db/lib/commons-collections-3.1.jar"/>
+	<classpathentry kind="lib" path="/home/rcs/Master/extern/java/eclipse/workspaceDevWorks/org.compiere.mfg_scm.eclipse.db/lib/commons-dbcp-1.2.1.jar"/>
+	<classpathentry kind="lib" path="/home/rcs/Master/extern/java/eclipse/workspaceDevWorks/org.compiere.mfg_scm.eclipse.db/lib/commons-digester-1.7.jar"/>
+	<classpathentry kind="lib" path="/home/rcs/Master/extern/java/eclipse/workspaceDevWorks/org.compiere.mfg_scm.eclipse.db/lib/commons-lang-2.0.jar"/>
+	<classpathentry kind="lib" path="/home/rcs/Master/extern/java/eclipse/workspaceDevWorks/org.compiere.mfg_scm.eclipse.db/lib/commons-logging-1.0.4.jar"/>
+	<classpathentry kind="lib" path="/home/rcs/Master/extern/java/eclipse/workspaceDevWorks/org.compiere.mfg_scm.eclipse.db/lib/torque-gen-3.2-rc3.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
