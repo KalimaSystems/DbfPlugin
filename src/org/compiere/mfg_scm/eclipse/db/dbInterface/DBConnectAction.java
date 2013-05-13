@@ -1,7 +1,6 @@
 /*
  * ====================================================================
- * Copyright 2002-2004 The Apache Software Foundation. Parts (c) Copyright
- * 2004-2005 Compiere MFG + SCM.
+ * Copyright 2002-2004 The Apache Software Foundation. Parts (c)  * Copyright 2001-2013 Andre Charles Legendre <andre.legendre@kalimasystems.org>
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
